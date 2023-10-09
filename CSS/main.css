@@ -1,0 +1,113 @@
+/* Подключение шрифта */
+/*@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Stalinist+One&family=Tektur:wght@600&display=swap');
+/* Стиль для HTML и body */
+html, body {
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    font-family: 'Stalinist One', cursive;
+    background-color: rgb(0, 0, 0);
+    color: #f3e5fc;
+    text-shadow: -12px -17px 14px rgb(174, 0, 255);
+}
+
+/* Стиль для контура поля, где бегает змейка */
+.ground {
+    border: 10px solid rgb(174, 0, 255); /*  неоновый контур */
+    box-shadow: 0 0 200px rgb(174, 0, 255); /* неоновое свечение */
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+}
+
+/* Стиль для информации (текущего счета и рекорда) */
+.info {
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.info__current-score, .info__best-score {
+    font-size: 70px;
+    color: #ffffff; /* Белый текст */
+    text-shadow: -20px -13 15px rgb(183, 0, 255); /* Синее неоновое свечение */
+}
+
+/* Стиль для игрового меню (кнопки "играть") */
+.play {
+    position: relative;
+    margin: auto;
+    max-width: 802px;
+}
+
+.play__menu {
+    opacity: 1;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 802px;
+    height: 802px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid rgb(174, 0, 255); /* Красный неоновый контур */
+    box-shadow: 0 0 80px rgb(174, 0, 255); /* Красное неоновое свечение */
+}
+
+.play__menu.inplay {
+    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    top: -120%;
+    opacity: 0;
+}
+
+.play__button {
+    color: #f0ccff;
+    font-size: 50px;
+    padding: 61px;
+    border: 8px solid rgb(229, 173, 255);
+    border-radius: 207px;
+    cursor: pointer;
+    text-shadow: -19px -20px 11px rgb(174, 0, 255);
+}
+/* Стиль для заставки проигрыша */
+.lose {
+    top: -200%;
+    display: none;
+}
+
+.lose.inlose {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 802px;
+    height: 802px;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    border: 10px solid rgb(174, 0, 255); /* Красный неоновый контур */
+    box-shadow: 0 0 340px rgb(174, 0, 255); /* Красное неоновое свечение */
+}
+
+.lose__title {
+    color: #eec2ff;
+    text-align: center;
+    font-size: 70px;
+    letter-spacing: 20px;
+    margin: 100px 0;
+    text-shadow: -20px -15px 19px rgb(174, 0, 255);
+}
+
+.lose__button {
+    color: #e0b2ff;
+    font-size: 40px;
+    padding: 50px;
+    border: 5px solid rgb(231, 167, 255);
+    border-radius: 145px;
+    cursor: pointer;
+    text-shadow: -19px -20px 9px rgb(179 16 255);
+}

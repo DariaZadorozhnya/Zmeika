@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="./CSS/main.css">
+    <script src="./JS/index.js" defer></script>
+	<title>ЗМЕЙКА</title>
+</head>
+<body>
+    <div class="container">
+        <div class="info">
+            <div class="info__current-score">Текущий счет : 0</div>
+            <div class="info__best-score">Ваш рекорд : 0</div>
+        </div>
+        
+        <div class="play">
+            <!-- Элемент для отрисовки графики -->
+            <canvas width="800spx" height="800px" class="ground"></canvas>
+
+            <!-- Кнопка старта игры -->
+            <div class="play__menu">
+                <div class="play__button">Играть</div>
+                <audio id="play-music" src="./MEDIA/song.mp3"></audio>
+            </div>
+
+            <!-- Заставка проигрыша -->
+            <div class="lose">
+                <div class="lose__title">Ваш счет : 0!</div>
+                <div class="lose__button">Попробуй еще раз!</div>            
+            </div>
+        </div>
+    </div>
+</body>
+</html>
