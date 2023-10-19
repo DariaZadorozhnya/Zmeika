@@ -50,6 +50,8 @@ const canvas = document.querySelector('.ground'),
         // меняем координату в зависимости от направления движения
         player.currentX += player.dx;
         player.currentY += player.dy;
+
+        console.log(player.currentX + " " + player.currentY)
   
         // добавляем в начало хвоста ячейку
         player.tail.unshift({
@@ -84,7 +86,7 @@ const canvas = document.querySelector('.ground'),
     const crash = (x, y, index) => { 
         // проверяем имеют ли разные части хвоста одни и те же координаты (удар)
         for (let i = index + 1; i < player.tailLength; i++) {
-            if (player.tail[i].x === x && player.tail[i].y === y || (player.tail[i].x <= 0 || player.tail[i].y <= 0)) {
+            if (player.tail[i].x === x && player.tail[i].y === y) {
                 // если да
                 // делаем экран проигрыша видимым
                 loseMenu.classList.add('inlose');
@@ -150,15 +152,15 @@ const canvas = document.querySelector('.ground'),
     
     const teleport = () => {
       if (player.currentX < 0 && player.dx === -grid) {
-          player.currentX = canvas.clientWidth;
+          player.currentX = canvas.clientWidth-grid/2;
       } else if (player.currentX > canvas.clientWidth - grid && player.dx === grid) {
-          player.currentX = -grid;
+          player.currentX = -grid/2;
       }
   
       if (player.currentY < 0 && player.dy === -grid) {
-          player.currentY = canvas.clientHeight;
+          player.currentY = canvas.clientHeight-grid/2;
       } else if (player.currentY > canvas.clientHeight - grid && player.dy === grid) {
-          player.currentY = -grid;
+          player.currentY = -grid/2;
       }
 
       if (player.currentX === -grid && player.dx === 0) {
@@ -262,7 +264,7 @@ playButton.addEventListener('click', () => {
    
 });
 
-// функция срабатывает при нажатии мышкой по кнопке играть снова
+// функция срабатывает при нажатии мышкой по кнопке играть снова дашка мышка хехехе
 playAgainButton.addEventListener('click', () => {
     playButton.classList.add('inplay');
     loseMenu.classList.remove('inlose');
@@ -271,10 +273,3 @@ playAgainButton.addEventListener('click', () => {
     Start();
     
     });
-        
-
-  
-  
-  
-  
-    
